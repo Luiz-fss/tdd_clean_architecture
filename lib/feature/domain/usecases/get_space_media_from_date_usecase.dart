@@ -5,12 +5,12 @@ import 'package:tdd_clean_architecture/feature/domain/entities/space_media_entit
 import 'package:tdd_clean_architecture/feature/domain/repositories/i_space_media_repository.dart';
 
 
-class GetSpaceMediaUsecase extends Usecase<SpaceMediaEntity,NoParams>{
+class GetSpaceMediaFromDateUsecase extends Usecase<SpaceMediaEntity,DateTime>{
   final ISpaceMediaRepository repository;
 
-  GetSpaceMediaUsecase(this.repository);
+  GetSpaceMediaFromDateUsecase(this.repository);
   @override
-  Future<Either<Failure, SpaceMediaEntity>> call(NoParams params) async{
-   return await repository.getSpaceMediaFromDate();
+  Future<Either<Failure, SpaceMediaEntity>> call(DateTime date) async{
+   return await repository.getSpaceMediaFromDate(date);
   }
 }
